@@ -66,9 +66,9 @@ I’m always on the lookout for new challenges and opportunities to learn and ap
 ## Projects
 
 Here’s a list of some of the projects I’ve worked on:
-- **[Project Name 1](#)** – Description of project 1. A brief explanation of the technology stack used and the problem it solves.
-- **[Project Name 2](#)** – Description of project 2.
-- **[Project Name 3](#)** – Description of project 3.
+- **[Fitness App](#)** – An Android app designed to help users stay fit with custom workouts, progress tracking and motivation boosts.
+- **[Personal Portfolio](#)** – A personal portfolio website built to showcase my skills, journey and passion for tech.
+- **[MarketShift](#)** – An E-commerce Website to help users buy and sell goods online
 
 I’m always looking to improve my skills, so I’m continuously working on new projects. Check out my GitHub for more!
 
@@ -76,7 +76,8 @@ I’m always looking to improve my skills, so I’m continuously working on new 
 
 ## Contact
 
-Feel free to reach out via email at [valeriembaka0@gmail.com](mailto:valeriembaka0@gmail.com) or connect with me on [LinkedIn](https://linkedin.com/in/valeriembaka). I’m always open to collaborating and discussing tech.
+Feel free to reach out via email at [valeriembaka0@gmail.com](mailto:valeriembaka0@gmail.com) or connect 
+with me on [LinkedIn](https://linkedin.com/in/valeriembaka). I’m always open to collaborating and discussing tech.
 
 Or, you can drop me a message directly using the form on my portfolio!
 
