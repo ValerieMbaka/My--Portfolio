@@ -31,6 +31,12 @@
                 <h1> Valerie Mbaka </h1>
             </div>
 	        
+	        <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+			</div>
+ 
             <ul class="nav-links">
                 <li><a href="#hero"> Home </a></li>
                 <li><a href="#about"> About </a></li>
@@ -434,6 +440,43 @@
 	<script>
         AOS.init();
 	</script>
+
+	<!-- JavaScript to toggle the menu -->
+	<script>
+        // Function to toggle the menu
+        function toggleMenu() {
+            const navLinks = document.querySelector(".nav-links");  // Use querySelector for class
+            navLinks.classList.toggle("show");
+        }
+
+        // Add event listener to hamburger
+        const hamburger = document.getElementById("hamburger");
+        hamburger.addEventListener("click", toggleMenu);  // Call toggleMenu when hamburger is clicked
+
+        // Close the menu when a link is clicked
+        const links = document.querySelectorAll(".nav-links a");
+        links.forEach(link => {
+            link.addEventListener("click", () => {
+	            const navLinks = document.querySelector(".nav-links");
+                navLinks.classList.remove("show");  // Close the menu
+            });
+        });
+	</script>
+
+
+	<script>
+        window.addEventListener('scroll', function () {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 10) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+	</script>
+
+
+
 
 
 </body>
