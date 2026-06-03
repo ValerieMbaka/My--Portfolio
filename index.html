@@ -1,483 +1,1324 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport"
-	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="description" content="Valerie Mbaka's Portfolio - Showcasing my skills, projects and experiences as a software engineer.">
-    	<meta name="keywords" content="Valerie Mbaka, Software Engineering, Portfolio, Web Development, Projects">
-    	<meta name="author" content="Valerie Mbaka">
-	<link rel="icon" href="images/val.jpg">
-	<title> Valerie Mbaka's Portfolio </title>
-	
-	<!-- Connect to external CSS Stylesheet -->
-	<link rel="stylesheet" href="styles.css" type="text/css"/>
-	
-	<!-- Connect to google fonts -->
-    	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-	
-	<!-- Connect to AOS library for animations -->
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Valerie Mbaka — Software Engineer building impactful, user-centered solutions.">
+  <meta name="keywords" content="Valerie Mbaka, Software Engineering, Portfolio, Web Development">
+  <meta name="author" content="Valerie Mbaka">
+  <link rel="icon" href="images/val.jpg">
+  <title>Valerie Mbaka — Software Engineer</title>
 
-	
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Supplemental styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ─── RESET & TOKENS ─── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink:        #0f0f0e;
+      --ink-soft:   #5a5a54;
+      --ink-muted:  #9a9a92;
+      --paper:      #fafaf7;
+      --paper-2:    #f2f2ed;
+      --paper-3:    #e8e8e1;
+      --accent:     #1a1a6e;
+      --accent-mid: #3340b0;
+      --accent-light: #eeeef9;
+      --line:       rgba(0,0,0,0.08);
+      --r:          6px;
+      --r-lg:       14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1, h2, h3, .serif { font-family: 'DM Serif Display', serif; }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ─── LAYOUT ─── */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section { padding: 6rem 0; }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* ─── NAV ─── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(250,250,247,0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    header.scrolled { border-bottom-color: var(--line); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--ink);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      background: var(--paper);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 70% 40%, var(--accent-light) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 4rem;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow span {
+      width: 32px;
+      height: 1px;
+      background: var(--ink-muted);
+      display: inline-block;
+    }
+
+    .hero-eyebrow p {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+      margin-bottom: 0.5rem;
+      min-height: 1.65em;
+    }
+
+    #typed-role {
+      color: var(--accent-mid);
+      font-style: italic;
+      font-family: 'DM Serif Display', serif;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      max-width: 460px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.7rem 1.5rem;
+      border-radius: var(--r);
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-dark {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .btn-dark:hover {
+      background: #2a2a28;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--paper-3);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    .hero-photo {
+      width: 280px;
+      height: 340px;
+      border-radius: var(--r-lg);
+      object-fit: cover;
+      object-position: top center;
+      filter: grayscale(15%);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.10), 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--paper-2); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-heading {
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-heading em {
+      color: var(--accent-mid);
+    }
+
+    .about-body p {
+      font-size: 0.975rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .about-image-wrap img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: var(--r-lg);
+    }
+
+    /* ─── SKILLS ─── */
+    #skills { background: var(--paper); }
+
+    .skills-heading {
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .skill-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .skill-name-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .skill-name-wrap img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .skill-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .skill-pct {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+    }
+
+    .track {
+      height: 3px;
+      background: var(--paper-3);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .fill {
+      height: 100%;
+      width: 0;
+      background: var(--ink);
+      border-radius: 99px;
+      transition: width 1.6s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    /* ─── EDUCATION ─── */
+    #education { background: var(--paper-2); }
+
+    .edu-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .edu-intro {
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .edu-sub {
+      font-size: 0.925rem;
+      color: var(--ink-soft);
+      margin-bottom: 2rem;
+    }
+
+    .edu-entry {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .edu-entry:first-child { border-top: 1px solid var(--line); }
+
+    .edu-institution {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.3rem;
+    }
+
+    .edu-degree {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+
+    .edu-year {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+    }
+
+    /* ─── INTERESTS ─── */
+    #interests { background: var(--paper); }
+
+    .interests-heading {
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+    }
+
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+
+    .interest-tile {
+      background: var(--paper);
+      padding: 1.75rem;
+      transition: background 0.2s;
+    }
+
+    .interest-tile:hover { background: var(--accent-light); }
+
+    .interest-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .interest-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+    }
+
+    .interest-desc {
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+
+    /* ─── PROJECTS ─── */
+    #projects { background: var(--paper-2); }
+
+    .projects-heading {
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+    }
+
+    .projects-list {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--r-lg);
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .project-num {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      margin-bottom: 0.5rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .project-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin-bottom: 1rem;
+      max-width: 560px;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      color: var(--accent);
+      background: var(--accent-light);
+      border-radius: 4px;
+      padding: 0.2rem 0.55rem;
+      font-weight: 500;
+    }
+
+    .project-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .proj-link {
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+
+    .proj-link:hover { color: var(--ink); }
+
+    .proj-link svg {
+      width: 13px;
+      height: 13px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-heading {
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      letter-spacing: -0.02em;
+      color: var(--paper);
+      margin-bottom: 1rem;
+    }
+
+    .contact-text {
+      font-size: 0.925rem;
+      color: rgba(250,250,247,0.6);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.875rem;
+      color: rgba(250,250,247,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover { color: var(--paper); }
+
+    .contact-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 1rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .field label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(250,250,247,0.45);
+      margin-bottom: 0.4rem;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--r);
+      padding: 0.75rem 1rem;
+      color: var(--paper);
+      font-size: 0.9rem;
+      font-family: 'DM Sans', sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+      resize: none;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder { color: rgba(250,250,247,0.25); }
+
+    .field input:focus,
+    .field textarea:focus { border-color: rgba(255,255,255,0.35); }
+
+    .btn-light {
+      background: var(--paper);
+      color: var(--ink);
+      margin-top: 0.5rem;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .btn-light:hover { background: #fff; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 1.5rem 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: rgba(250,250,247,0.35);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .footer-socials a {
+      font-size: 0.8rem;
+      color: rgba(250,250,247,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-socials a:hover { color: rgba(250,250,247,0.9); }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 768px) {
+      section { padding: 4rem 0; }
+
+      .container { padding: 0 1.25rem; }
+
+      .hamburger { display: flex; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        background: rgba(250,250,247,0.97);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        gap: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 0.5rem 0;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .nav-links li a {
+        display: block;
+        padding: 0.85rem 1.5rem;
+        font-size: 1rem;
+        color: var(--ink);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-photo {
+        width: 180px;
+        height: 220px;
+        margin: 0 auto;
+        order: -1;
+      }
+
+      .hero-eyebrow { justify-content: center; }
+
+      .hero-actions { justify-content: center; }
+
+      .about-grid,
+      .edu-layout,
+      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .about-image-wrap img { height: 260px; }
+
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+
+      .form-row { grid-template-columns: 1fr; }
+
+      .project-card { grid-template-columns: 1fr; }
+
+      .project-links { flex-direction: row; }
+
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
-	<!-- Navigation Links -->
-	<header>
-        <nav>
-            <div class="nav-left">
-                <h1> Valerie Mbaka </h1>
-            </div>
-	        
-	        <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-			</div>
- 
-            <ul class="nav-links">
-                <li><a href="#hero"> Home </a></li>
-                <li><a href="#about"> About </a></li>
-                <li><a href="#skills"> Skills </a></li>
-                <li><a href="#education"> Education </a></li>
-                <li><a href="#projects"> Projects </a></li>
-                <li><a href="#contact"> Contact </a></li>
-            </ul>
-        </nav>
-	</header>
+<!-- ─── HEADER ─── -->
+<header id="site-header">
+  <nav>
+    <a href="#hero" class="nav-logo">Valerie Mbaka</a>
 
-	
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
-            <div class="text-content">
-                <h1> Hi, I am Valerie Faith Mbaka </h1>
-	            <p> A passionate Software Engineer focused on building impactful, user-centered solutions. </p>
-                <p> I am a <span id="my-skills">  </span></p>
-                <a href="#projects" class="btn-primary"> Check out my work </a>
-            </div>
-            <img src="images/val.jpg" alt="Valerie Mbaka" class="hero-image">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">
+          <span></span>
+          <p>Software Engineer · Nairobi, Kenya</p>
         </div>
-    </section>
 
-	
-	<!-- About Section -->
-    <section id="about">
-        <div class="about-content">
-            <div class="about-text">
-                <h2> About Me </h2>
-                <p> I am a passionate software engineer who thrives on challenges and is driven by the constant pursuit
-	                of learning and growth. My journey in tech began with a deep curiosity about how things work and a
-	                desire to create impactful solutions. I specialize in web development, full-stack development and
-	                android development, constantly learning and evolving in these fields. </p>
-	            <br>
-                <p> What drives me the most is the opportunity to use technology to create solutions that not only solve
-	                real-world problems but also promote innovation and creativity. I believe that technology has the
-	                power to transform industries and improve lives. The constant evolution of tech excites me, and I
-	                find joy in collaborating with others, pushing the boundaries of what’s possible, and constantly
-	                improving my skill set. Whether it’s creating a seamless user experience or designing efficient
-	                algorithms, I find immense satisfaction in making a difference through code.
-	                My passion for building projects that people can use and enjoy fuels my motivation every day. </p>
-	            <br>
-                <p> When I'm not immersed in coding, you can catch me playing football, brainstorming new ideas for my
-	                next big venture, or learning something new in the tech world. My goal is to leverage my passion for
-	                tech to continue growing as a developer, make meaningful contributions and lead innovative projects that
-	                help shape the future and leave a lasting impact on the world.</p>
-            </div>
-	        
-	        <div class="about-image">
-		        <img src="images/code4.jpeg" alt="Valerie Mbaka">
-	        </div>
+        <h1 class="hero-title">
+          Hi, I'm<br>Valerie Faith Mbaka
+        </h1>
+
+        <p class="hero-subtitle">
+          <span id="typed-role"></span>
+        </p>
+
+        <p class="hero-desc">
+          A passionate engineer focused on building impactful,
+          user-centered solutions across web and mobile.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-dark">View my work</a>
+          <a href="#contact" class="btn btn-outline">Get in touch</a>
         </div>
-	</section>
+      </div>
 
-	
-	<!-- Skills Section -->
-	<section id="skills">
-        <div class="skills-container">
-            <h2> My Skills </h2>
-            <div class="skills-grid">
+      <img src="images/val.jpg" alt="Valerie Mbaka" class="hero-photo">
+    </div>
+  </div>
+</section>
 
-	            <!-- HTML5 -->
-                <div class="skill">
-                    <img src="icons/html-5.png" alt="HTML5" />
-                    <p> HTML5 </p>
-                    <div class="progress-bar"><div class="progress" data-percent="98"></div></div>
-                </div>
+<div class="divider"></div>
 
-                <!-- CSS3 -->
-                <div class="skill">
-                    <img src="icons/css.png" alt="CSS3" />
-                    <p> CSS3 </p>
-                    <div class="progress-bar"><div class="progress" data-percent="97"></div></div>
-                </div>
 
-                <!-- Bootstrap -->
-                <div class="skill">
-                    <img src="icons/bootstrap.png" alt="Bootstrap 5" />
-                    <p> Bootstrap 5 </p>
-                    <div class="progress-bar"><div class="progress" data-percent="95"></div></div>
-                </div>
+<!-- ─── ABOUT ─── -->
+<section id="about" data-aos="fade-up">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-body">
+        <p class="section-label">About me</p>
+        <h2 class="about-heading">
+          Building things that<br><em>matter</em>
+        </h2>
+        <p>I'm a passionate software engineer who thrives on challenges and is driven by the constant pursuit of learning and growth. My journey in tech began with a deep curiosity about how things work — and a desire to create impactful solutions.</p>
+        <p>I specialise in full-stack and Android development, constantly evolving within these fields. What drives me is using technology to create solutions that not only solve real-world problems, but also promote innovation and creativity.</p>
+        <p>When I'm not immersed in coding, you can catch me playing football, brainstorming new ventures, or exploring the latest in tech. My goal is to grow as a developer, make meaningful contributions, and lead innovative projects that shape the future.</p>
+      </div>
 
-                <!-- JavaScript -->
-                <div class="skill">
-                    <img src="icons/java-script.png" alt="JavaScript" />
-                    <p> JavaScript </p>
-                    <div class="progress-bar"><div class="progress" data-percent="88"></div></div>
-                </div>
+      <div class="about-image-wrap" data-aos="fade-left" data-aos-delay="100">
+        <img src="images/code4.jpeg" alt="Valerie coding">
+      </div>
+    </div>
+  </div>
+</section>
 
-                <!-- Django -->
-                <div class="skill">
-                    <img src="icons/django.png" alt="Django" />
-                    <p> Django </p>
-                    <div class="progress-bar"><div class="progress" data-percent="96"></div></div>
-                </div>
+<div class="divider"></div>
 
-                <!-- Python -->
-                <div class="skill">
-                    <img src="icons/python.png" alt="Python" />
-                    <p> Python </p>
-                    <div class="progress-bar"><div class="progress" data-percent="90"></div></div>
-                </div>
-	
-                <!-- Java -->
-                <div class="skill">
-                    <img src="icons/java.png" alt="Java" />
-	                <p> Java </p>
-	                <div class="progress-bar"><div class="progress" data-percent="85"></div></div>
-	            </div>
 
-                <!-- Kotlin -->
-	            <div class="skill">
-                    <img src="icons/kotlin.jpeg" alt="Kotlin" />
-                    <p> Kotlin </p>
-                    <div class="progress-bar"><div class="progress" data-percent="75"></div></div>
-                </div>
+<!-- ─── SKILLS ─── -->
+<section id="skills" data-aos="fade-up">
+  <div class="container">
+    <p class="section-label">Technical proficiency</p>
+    <h2 class="skills-heading">My Skills</h2>
 
-                <!-- Node.js -->
-                <div class="skill">
-                    <img src="icons/nodejs.png" alt="Node.js" />
-                    <p> Node.js </p>
-                    <div class="progress-bar"><div class="progress" data-percent="70"></div></div>
-                </div>
+    <div class="skills-grid">
 
-                <!-- Git -->
-                <div class="skill">
-                    <img src="icons/github.png" alt="Git" />
-                    <p> Git </p>
-                    <div class="progress-bar"><div class="progress" data-percent="90"></div></div>
-                </div>
-
-                <!-- C -->
-                <div class="skill">
-                    <img src="icons/c-.png" alt="C" />
-                    <p> C </p>
-                    <div class="progress-bar"><div class="progress" data-percent="80"></div></div>
-                </div>
-
-                <!-- C++ -->
-                <div class="skill">
-                    <img src="icons/c-logo.png" alt="C++" />
-                    <p> C++ </p>
-                    <div class="progress-bar"><div class="progress" data-percent="87"></div></div>
-                </div>
-
-                <!-- MySQL -->
-                <div class="skill">
-                    <img src="icons/mysql.png" alt="MySQL" />
-	                <p> MySQL </p>
-                    <div class="progress-bar"><div class="progress" data-percent="80"></div></div>
-                </div>
-
-                <!-- Oracle -->
-                <div class="skill">
-                    <img src="icons/oracle.png" alt="Oracle" />
-                    <p> Oracle </p>
-                    <div class="progress-bar"><div class="progress" data-percent="75"></div></div>
-                </div>
-
-            </div>
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/html-5.png" alt="">
+            <span class="skill-name">HTML5</span>
+          </div>
+          <span class="skill-pct">98%</span>
         </div>
-	</section>
+        <div class="track"><div class="fill" data-w="98"></div></div>
+      </div>
 
-	
-	<!-- Education Background Section -->
-    <section id="education" class="education-section" data-aos="fade-up">
-        <h2> Educational Background </h2>
-
-        <div class="education-content">
-            <div class="education-timeline">
-                <div class="education-entry">
-                    <h3> Bachelor of Science in Software Engineering </h3>
-                    <p> Multimedia University of Kenya</p>
-                    <span class="edu-year"> 2023 - Present </span>
-                </div>
-	            
-	            <div class="education-entry">
-		            <h3> High School Diploma </h3>
-                    <p> The Kenya High School </p>
-                    <span class="edu-year"> 2019 - 2022 </span>
-                </div>
-            </div>
-
-            <div class="education-timeline">
-	            
-	            <div class="education-entry">
-		            <h3> Software Engineering </h3>
-                    <p> Power Learn Project </p>
-                    <span class="edu-year"> 2025 - Present </span>
-                </div>
-	            
-	            <div class="education-entry">
-		            <h3> Web Development </h3>
-                    <p> eMobilis Technology Training Institute  </p>
-                    <span class="edu-year"> October 2024 - December 2024 </span>
-                </div>
-	            
-                <a href="docs/Valerie%20Mbaka%20CV.pdf" download class="btn-download education-download">
-                    📄 Download My CV
-                </a>
-            </div>
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/css.png" alt="">
+            <span class="skill-name">CSS3</span>
+          </div>
+          <span class="skill-pct">97%</span>
         </div>
-   </section>
+        <div class="track"><div class="fill" data-w="97"></div></div>
+      </div>
 
-	
-	<!-- Interests Section -->
-	<section id="interests" class="interests-section" data-aos="fade-up">
-        <h2> My Tech Interests </h2>
-        <div class="interests-container">
-            <div class="interest">
-                <h3> Problem Solving 💡 </h3>
-                <p> I am passionate about breaking down complex problems and finding efficient, creative solutions
-	                through code. </p>
-            </div>
-	        
-	        <div class="interest">
-                <h3> Full-Stack Development 💻 </h3>
-                <p> I enjoy building end-to-end applications, from creating the front-end to handling the
-	                back-end to ensure a seamless experience. </p>
-            </div>
-	        
-            <div class="interest">
-                <h3> Web Development 🌐 </h3>
-                <p> I am fascinated by the process of building beautiful, responsive websites and apps that offer
-	                great user experiences. </p>
-            </div>
-	        
-            <div class="interest">
-                <h3> Artificial Intelligence 🧠 </h3>
-                <p> The potential of AI to revolutionize industries and solve real-world challenges excites me greatly. </p>
-            </div>
-	        
-            <div class="interest">
-                <h3> Continuous Learning 🚀 </h3>
-                <p> I am passionate about growing every day—whether it’s learning a new framework, mastering
-	                an algorithm, or exploring new tech trends. </p>
-            </div>
-	        
-	        <div class="interest">
-                <h3> Cybersecurity 🔐 </h3>
-                <p> I am keen on understanding security principles and methods to protect data and systems from
-	                potential threats. </p>
-            </div>
-	        
-	        <div class="interest">
-                <h3> DevOps ⚙️ </h3>
-                <p> I find the combination of development and operations fascinating, focusing on improving
-	                collaboration, automation and CI/CD processes. </p>
-            </div>
-	        
-	        <div class="interest">
-                <h3> Android Development 📱 </h3>
-                <p> I love building mobile applications for Android, focusing on user-centric design and delivering smooth performance. </p>
-            </div>
-	        
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/bootstrap.png" alt="">
+            <span class="skill-name">Bootstrap 5</span>
+          </div>
+          <span class="skill-pct">95%</span>
         </div>
-	</section>
+        <div class="track"><div class="fill" data-w="95"></div></div>
+      </div>
 
-	
-	<!-- Projects Section -->
-    <section id="projects" class="projects-section" data-aos="fade-up">
-	    <h2> My Projects </h2>
-        <div class="projects-container">
-    
-            <div class="project-card">
-                <h3> Fitness App </h3>
-                <p> An Android app designed to help users stay fit with custom workouts, progress tracking
-	                and motivation boosts. </p>
-                <p><strong>Tech:</strong> Kotlin, Firebase</p>
-                <a href="https://github.com/ValerieMbaka/Project.git" target="_blank"> GitHub Repo </a>
-            </div>
-
-	        <div class="project-card">
-                <h3> Personal Portfolio </h3>
-                <p> This very website you're viewing; built to showcase my skills, journey and passion for tech. </p>
-                <p><strong>Tech:</strong> HTML, CSS, JavaScript </p>
-                <a href="https://valeriembaka.github.io/My--Portfolio/" target="_blank"> Live Demo</a> |
-                <a href="https://github.com/ValerieMbaka/My--Portfolio.git" target="_blank">GitHub Repo </a>
-            </div>
-
-            <div class="project-card">
-                <h3> MarketShift </h3>
-                <p> An E-commerce Website to help users buy and sell goods online </p>
-                <p><strong>Tech:</strong> HTML, CSS, JavaScript, Python, Django, MySQL, Bootstrap, Firebase </p>
-                <a href="https://github.com/ValerieMbaka/E-commerce-Project.git" target="_blank"> GitHub Repo </a>
-            </div>
-    
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/java-script.png" alt="">
+            <span class="skill-name">JavaScript</span>
+          </div>
+          <span class="skill-pct">88%</span>
         </div>
-	</section>
+        <div class="track"><div class="fill" data-w="88"></div></div>
+      </div>
 
-	
-	<!-- Contact Section -->
-	<section id="contact" class="contact-section" data-aos="fade-up">
-        <h2> Contact Me </h2>
-		<div class="contact-container">
-            <div class="contact-info">
-                <p> If you have any questions or just want to get in touch, feel free to
-	                reach out to me via the form below 💌 </p>
-            </div>
-        
-            <div class="contact-form">
-                <form action="mailto:valerie0@gmail.com" method="post" enctype="text/plain">
-                    <label for="name"> Full Name </label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                
-                    <label for="email"> Email </label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email">
-                
-                    <label for="message"> Message </label>
-                    <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
-                
-                    <button type="submit"> Send Message </button>
-                </form>
-            </div>
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/django.png" alt="">
+            <span class="skill-name">Django</span>
+          </div>
+          <span class="skill-pct">96%</span>
         </div>
-	</section>
+        <div class="track"><div class="fill" data-w="96"></div></div>
+      </div>
 
-
-	<!-- Footer -->
-	<footer class="footer">
-        <div class="footer-container">
-            
-            <div class="social-links">
-	            <a href="https://github.com/ValerieMbaka" target="_blank">
-                    <img src="icons/github.png" alt="GitHub"> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/valeriembaka" target="_blank">
-                    <img src="icons/linkedin.png" alt="LinkedIn"> LinkedIn
-                </a>
-            </div>
-	        
-	        <div class="footer-info">
-                <p> &copy; Valerie Mbaka 2025. All rights reserved. </p>
-            </div>
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/python.png" alt="">
+            <span class="skill-name">Python</span>
+          </div>
+          <span class="skill-pct">90%</span>
         </div>
-	</footer>
+        <div class="track"><div class="fill" data-w="90"></div></div>
+      </div>
 
-	
-	<!-- JavaScript -->
-	<!-- JavaScript for Typing Effect -->
-	<script>
-        // Typing Effect for Skills
-        const skills = ["Full-Stack Developer", "Web Developer", "Mobile Apps Developer",
-	        "Game Developer", "Cyber Security Enthusiast"];
-        let currentSkillIndex = 0;
-        let currentCharIndex = 0;
-        const skillElement = document.getElementById("my-skills");
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/java.png" alt="">
+            <span class="skill-name">Java</span>
+          </div>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="track"><div class="fill" data-w="85"></div></div>
+      </div>
 
-        function typeSkill() {
-            if (currentCharIndex < skills[currentSkillIndex].length) {
-                skillElement.textContent += skills[currentSkillIndex].charAt(currentCharIndex);
-                currentCharIndex++;
-                setTimeout(typeSkill, 100); // Typing speed
-            } else {
-                setTimeout(deleteSkill, 1500); // Pause before deleting
-            }
-        }
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/kotlin.jpeg" alt="">
+            <span class="skill-name">Kotlin</span>
+          </div>
+          <span class="skill-pct">75%</span>
+        </div>
+        <div class="track"><div class="fill" data-w="75"></div></div>
+      </div>
 
-        function deleteSkill() {
-            if (currentCharIndex > 0) {
-                skillElement.textContent = skills[currentSkillIndex].substring(0, currentCharIndex - 1);
-                currentCharIndex--;
-                setTimeout(deleteSkill, 50); // Deletion speed here
-            } else {
-                currentSkillIndex = (currentSkillIndex + 1) % skills.length;
-                setTimeout(typeSkill, 500); // Pause before starting next skill
-            }
-        }
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/nodejs.png" alt="">
+            <span class="skill-name">Node.js</span>
+          </div>
+          <span class="skill-pct">70%</span>
+        </div>
+        <div class="track"><div class="fill" data-w="70"></div></div>
+      </div>
 
-        // Start typing the first skill
-        window.onload = function() {
-            typeSkill();
-        };
-    </script>
-	
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/github.png" alt="">
+            <span class="skill-name">Git</span>
+          </div>
+          <span class="skill-pct">90%</span>
+        </div>
+        <div class="track"><div class="fill" data-w="90"></div></div>
+      </div>
 
-	<!-- JavaScript for Progress Bar Animation -->
-	<script>
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const progresses = document.querySelectorAll('.progress');
-                    progresses.forEach(p => {
-                        const percent = p.getAttribute('data-percent');
-                        p.style.width = percent + '%';
-                    });
-                    observer.disconnect(); // run animation only once
-                }
-            });
-        });
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/c-.png" alt="">
+            <span class="skill-name">C</span>
+          </div>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="track"><div class="fill" data-w="80"></div></div>
+      </div>
 
-        observer.observe(document.querySelector('#skills'));
-	</script>
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/c-logo.png" alt="">
+            <span class="skill-name">C++</span>
+          </div>
+          <span class="skill-pct">87%</span>
+        </div>
+        <div class="track"><div class="fill" data-w="87"></div></div>
+      </div>
 
-	<!-- JavaScript for AOS (Animate on Scroll) -->
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	
-	<!-- Initialize AOS -->
-	<script>
-        AOS.init();
-	</script>
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/mysql.png" alt="">
+            <span class="skill-name">MySQL</span>
+          </div>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="track"><div class="fill" data-w="80"></div></div>
+      </div>
 
-	<!-- JavaScript to toggle the menu -->
-	<script>
-        // Function to toggle the menu
-        function toggleMenu() {
-            const navLinks = document.querySelector(".nav-links");  // Use querySelector for class
-            navLinks.classList.toggle("show");
-        }
+      <div class="skill-item">
+        <div class="skill-meta">
+          <div class="skill-name-wrap">
+            <img src="icons/oracle.png" alt="">
+            <span class="skill-name">Oracle</span>
+          </div>
+          <span class="skill-pct">75%</span>
+        </div>
+        <div class="track"><div class="fill" data-w="75"></div></div>
+      </div>
 
-        // Add event listener to hamburger
-        const hamburger = document.getElementById("hamburger");
-        hamburger.addEventListener("click", toggleMenu);  // Call toggleMenu when hamburger is clicked
+    </div>
+  </div>
+</section>
 
-        // Close the menu when a link is clicked
-        const links = document.querySelectorAll(".nav-links a");
-        links.forEach(link => {
-            link.addEventListener("click", () => {
-	            const navLinks = document.querySelector(".nav-links");
-                navLinks.classList.remove("show");  // Close the menu
-            });
-        });
-	</script>
-
-
-	<script>
-        window.addEventListener('scroll', function () {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 10) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-	</script>
+<div class="divider"></div>
 
 
+<!-- ─── EDUCATION ─── -->
+<section id="education" data-aos="fade-up">
+  <div class="container">
+    <div class="edu-layout">
+      <div>
+        <p class="section-label">Background</p>
+        <h2 class="edu-intro">Educational<br>Background</h2>
+        <p class="edu-sub">A mix of formal education and focused training, shaping a well-rounded engineer.</p>
+
+        <a href="docs/Valerie%20Mbaka%20CV.pdf" download class="btn btn-dark" style="display:inline-flex; margin-top:0.5rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download CV
+        </a>
+      </div>
+
+      <div>
+        <div class="edu-entry" data-aos="fade-up" data-aos-delay="50">
+          <p class="edu-institution">Multimedia University of Kenya</p>
+          <p class="edu-degree">BSc. Software Engineering</p>
+          <p class="edu-year">2023 – Present</p>
+        </div>
+
+        <div class="edu-entry" data-aos="fade-up" data-aos-delay="100">
+          <p class="edu-institution">Power Learn Project</p>
+          <p class="edu-degree">Software Engineering</p>
+          <p class="edu-year">2025 – Present</p>
+        </div>
+
+        <div class="edu-entry" data-aos="fade-up" data-aos-delay="150">
+          <p class="edu-institution">eMobilis Technology Training Institute</p>
+          <p class="edu-degree">Web Development</p>
+          <p class="edu-year">Oct 2024 – Dec 2024</p>
+        </div>
+
+        <div class="edu-entry" data-aos="fade-up" data-aos-delay="200">
+          <p class="edu-institution">The Kenya High School</p>
+          <p class="edu-degree">High School Diploma</p>
+          <p class="edu-year">2019 – 2022</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
 
 
+<!-- ─── INTERESTS ─── -->
+<section id="interests" data-aos="fade-up">
+  <div class="container">
+    <p class="section-label">What excites me</p>
+    <h2 class="interests-heading">Tech Interests</h2>
+
+    <div class="interests-grid">
+      <div class="interest-tile">
+        <div class="interest-icon">💡</div>
+        <p class="interest-title">Problem Solving</p>
+        <p class="interest-desc">Breaking down complex problems and finding efficient, creative solutions through code.</p>
+      </div>
+      <div class="interest-tile">
+        <div class="interest-icon">💻</div>
+        <p class="interest-title">Full-Stack Development</p>
+        <p class="interest-desc">Building end-to-end applications from front-end to back-end for seamless experiences.</p>
+      </div>
+      <div class="interest-tile">
+        <div class="interest-icon">🌐</div>
+        <p class="interest-title">Web Development</p>
+        <p class="interest-desc">Crafting beautiful, responsive websites and apps with great user experiences.</p>
+      </div>
+      <div class="interest-tile">
+        <div class="interest-icon">🧠</div>
+        <p class="interest-title">Artificial Intelligence</p>
+        <p class="interest-desc">Exploring AI's potential to revolutionise industries and solve real-world challenges.</p>
+      </div>
+      <div class="interest-tile">
+        <div class="interest-icon">🔐</div>
+        <p class="interest-title">Cybersecurity</p>
+        <p class="interest-desc">Understanding security principles to protect data and systems from potential threats.</p>
+      </div>
+      <div class="interest-tile">
+        <div class="interest-icon">⚙️</div>
+        <p class="interest-title">DevOps</p>
+        <p class="interest-desc">Improving collaboration, automation, and CI/CD processes at the dev-ops intersection.</p>
+      </div>
+      <div class="interest-tile">
+        <div class="interest-icon">📱</div>
+        <p class="interest-title">Android Development</p>
+        <p class="interest-desc">Building mobile apps for Android with a focus on user-centric design and smooth performance.</p>
+      </div>
+      <div class="interest-tile">
+        <div class="interest-icon">🚀</div>
+        <p class="interest-title">Continuous Learning</p>
+        <p class="interest-desc">Growing every day — new frameworks, algorithms, and emerging tech trends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+
+<!-- ─── PROJECTS ─── -->
+<section id="projects" data-aos="fade-up">
+  <div class="container">
+    <p class="section-label">Selected work</p>
+    <h2 class="projects-heading">Projects</h2>
+
+    <div class="projects-list">
+
+      <div class="project-card">
+        <div>
+          <p class="project-num">01</p>
+          <h3 class="project-name">Fitness App</h3>
+          <p class="project-desc">An Android app designed to help users stay fit with custom workouts, progress tracking and motivation boosts.</p>
+          <div class="tech-stack">
+            <span class="tag">Kotlin</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Android</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/ValerieMbaka/Project.git" target="_blank" class="proj-link">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <p class="project-num">02</p>
+          <h3 class="project-name">Personal Portfolio</h3>
+          <p class="project-desc">This very website — built to showcase my skills, journey and passion for tech, with a clean, minimal aesthetic.</p>
+          <div class="tech-stack">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://valeriembaka.github.io/My--Portfolio/" target="_blank" class="proj-link">
+            <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Live demo
+          </a>
+          <a href="https://github.com/ValerieMbaka/My--Portfolio.git" target="_blank" class="proj-link">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div>
+          <p class="project-num">03</p>
+          <h3 class="project-name">MarketShift</h3>
+          <p class="project-desc">A full-featured e-commerce platform enabling users to buy and sell goods online with a rich, seamless experience.</p>
+          <div class="tech-stack">
+            <span class="tag">Django</span>
+            <span class="tag">Python</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">Firebase</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/ValerieMbaka/E-commerce-Project.git" target="_blank" class="proj-link">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div data-aos="fade-right">
+        <p class="section-label" style="color:rgba(250,250,247,0.4)">Get in touch</p>
+        <h2 class="contact-heading">Let's work<br>together</h2>
+        <p class="contact-text">Have a project in mind, or just want to say hello? I'd love to hear from you — reach out via the form or connect directly.</p>
+
+        <div class="contact-links">
+          <a href="mailto:valerie0@gmail.com" class="contact-link">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            valerie0@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/valeriembaka" target="_blank" class="contact-link">
+            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            linkedin.com/in/valeriembaka
+          </a>
+          <a href="https://github.com/ValerieMbaka" target="_blank" class="contact-link">
+            <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            github.com/ValerieMbaka
+          </a>
+        </div>
+      </div>
+
+      <div data-aos="fade-left" data-aos-delay="100">
+        <form action="mailto:valerie0@gmail.com" method="post" enctype="text/plain">
+          <div class="form-group">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" required placeholder="Your name">
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com">
+              </div>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell me about your project…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-light">Send message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p class="footer-copy">© Valerie Mbaka 2025. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/ValerieMbaka" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/valeriembaka" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script> AOS.init({ duration: 700, once: true, offset: 60 }); </script>
+
+<!-- Scroll-based nav -->
+<script>
+  const hdr = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('scrolled', window.scrollY > 10);
+  });
+</script>
+
+<!-- Hamburger -->
+<script>
+  const ham = document.getElementById('hamburger');
+  const navEl = document.getElementById('nav-links');
+  ham.addEventListener('click', () => navEl.classList.toggle('open'));
+  navEl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navEl.classList.remove('open')));
+</script>
+
+<!-- Typing animation -->
+<script>
+  const roles = [
+    "Full-Stack Developer",
+    "Web Developer",
+    "Android Developer",
+    "Cybersecurity Enthusiast",
+    "Game Developer"
+  ];
+  let ri = 0, ci = 0, deleting = false;
+  const el = document.getElementById('typed-role');
+
+  function tick() {
+    const word = roles[ri];
+    el.textContent = deleting ? word.slice(0, --ci) : word.slice(0, ++ci);
+
+    if (!deleting && ci === word.length) {
+      setTimeout(() => { deleting = true; tick(); }, 1800);
+      return;
+    }
+    if (deleting && ci === 0) {
+      deleting = false;
+      ri = (ri + 1) % roles.length;
+    }
+    setTimeout(tick, deleting ? 45 : 90);
+  }
+  tick();
+</script>
+
+<!-- Skills progress bars -->
+<script>
+  const skillsSection = document.querySelector('#skills');
+  const io = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      document.querySelectorAll('.fill').forEach(bar => {
+        bar.style.width = bar.dataset.w + '%';
+      });
+      io.disconnect();
+    }
+  }, { threshold: 0.2 });
+  io.observe(skillsSection);
+</script>
 
 </body>
 </html>
