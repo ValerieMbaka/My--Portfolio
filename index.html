@@ -7,504 +7,407 @@
   <meta name="author" content="Valerie Mbaka" />
   <title>Valerie Mbaka — Software Engineer</title>
 
+  <link rel="icon" href="images/val.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- Custom cursor -->
-<div id="cursor"></div>
+  <!-- Custom cursor -->
+  <div id="cursor"></div>
 
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <span class="mobile-close" id="mobileClose">✕</span>
-  <a href="#hero" class="mobile-link">Home</a>
-  <a href="#about" class="mobile-link">About</a>
-  <a href="#skills" class="mobile-link">Skills</a>
-  <a href="#education" class="mobile-link">Education</a>
-  <a href="#projects" class="mobile-link">Projects</a>
-  <a href="#contact" class="mobile-link">Contact</a>
-</div>
-
-<!-- Navigation -->
-<nav id="mainNav">
-  <a href="#hero" class="nav-logo">VM<span>.</span></a>
-  <ul class="nav-links-desktop">
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Hire Me</a>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <span class="mobile-close" id="mobileClose">✕</span>
+    <a href="#hero" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#education" class="mobile-link">Education</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#contact" class="mobile-link">Contact</a>
   </div>
-</nav>
 
-<!-- Hero -->
-<section id="hero">
-  <div class="hero-bg-ring hero-bg-ring-1"></div>
-  <div class="hero-bg-ring hero-bg-ring-2"></div>
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-tag">
-        <div class="hero-tag-dot"></div>
-        <span>Available for opportunities</span>
-      </div>
-      <h1 class="hero-title">
-        Valerie<br><span class="name-accent">Mbaka.</span>
-        <span class="role-line">Software Engineer</span>
-      </h1>
-      <p class="hero-desc">
-        A passionate engineer building impactful, user-centered solutions.
-        Specializing in <span class="hero-typing" id="typingText"></span>
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn-accent">View Projects</a>
-        <a href="#contact" class="btn-ghost">Get in Touch</a>
-      </div>
-      <div class="hero-stats">
-        <div>
-          <div class="hero-stat-num">5+</div>
-          <div class="hero-stat-label">Live Projects</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">14+</div>
-          <div class="hero-stat-label">Technologies</div>
-        </div>
-        <div>
-          <div class="hero-stat-num">2+</div>
-          <div class="hero-stat-label">Years Learning</div>
-        </div>
-      </div>
+  <!-- Navigation -->
+  <nav id="mainNav">
+    <a href="#hero" class="nav-logo">VM<span>.</span></a>
+    <ul class="nav-links-desktop">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
     </div>
-    <div class="hero-card">
-      <!-- Replace with your actual photo path -->
-      <img src="images/val.jpg" alt="Valerie Mbaka" class="hero-card-img" onerror="this.style.minHeight='420px';this.style.background='#1c1c2a';" />
-      <div class="hero-card-badge">
-        <div class="hero-card-badge-icon">⚡</div>
-        <div>
-          <div class="hero-card-badge-text">Based in Nairobi, Kenya</div>
-          <div class="hero-card-badge-sub">Multimedia University of Kenya</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </nav>
 
-<!-- Marquee -->
-<div class="marquee-section">
-  <div class="marquee-track" id="marquee">
-    <span class="marquee-item"><span class="dot"></span>Full-Stack Development</span>
-    <span class="marquee-item"><span class="dot"></span>Android Apps</span>
-    <span class="marquee-item"><span class="dot"></span>Web Development</span>
-    <span class="marquee-item"><span class="dot"></span>Python & Django</span>
-    <span class="marquee-item"><span class="dot"></span>Kotlin & Java</span>
-    <span class="marquee-item"><span class="dot"></span>Cybersecurity</span>
-    <span class="marquee-item"><span class="dot"></span>AI Enthusiast</span>
-    <span class="marquee-item"><span class="dot"></span>Open Source</span>
-    <span class="marquee-item"><span class="dot"></span>Full-Stack Development</span>
-    <span class="marquee-item"><span class="dot"></span>Android Apps</span>
-    <span class="marquee-item"><span class="dot"></span>Web Development</span>
-    <span class="marquee-item"><span class="dot"></span>Python & Django</span>
-    <span class="marquee-item"><span class="dot"></span>Kotlin & Java</span>
-    <span class="marquee-item"><span class="dot"></span>Cybersecurity</span>
-    <span class="marquee-item"><span class="dot"></span>AI Enthusiast</span>
-    <span class="marquee-item"><span class="dot"></span>Open Source</span>
-  </div>
-</div>
-
-<!-- About -->
-<section id="about">
-  <div class="section-inner">
-    <p class="section-label">About Me</p>
-    <h2 class="section-title reveal">Driven by curiosity,<br>fueled by code.</h2>
-    <div class="about-grid reveal">
-      <div class="about-text">
-        <p>I'm a passionate software engineer who thrives on challenges and the constant pursuit of learning. My journey in tech began with a deep curiosity about how things work and a desire to create impactful solutions.</p>
-        <p>I specialize in full-stack development, web development, and Android development — constantly evolving in these fields. What drives me most is leveraging technology to create solutions that not only solve real-world problems but also promote innovation and creativity.</p>
-        <p>When I'm not coding, you can find me playing football, brainstorming new startup ideas, or exploring the latest in the tech world. My goal is to make meaningful contributions and lead innovative projects that shape the future.</p>
-        <div class="about-highlight">
-          <p>"Technology has the power to transform industries and improve lives — I want to be part of that transformation."</p>
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-bg-orb hero-orb-1"></div>
+    <div class="hero-bg-orb hero-orb-2"></div>
+    <div class="hero-bg-orb hero-orb-3"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-tag">
+          <div class="hero-tag-dot"></div>
+          <span>Available for opportunities</span>
         </div>
-      </div>
-      <div class="about-image-wrap">
-        <img src="images/code4.jpeg" alt="Valerie coding" class="about-image-main" onerror="this.style.minHeight='300px';this.style.background='#1c1c2a';this.style.borderRadius='20px';" />
-        <div class="about-tag-float">
-          <strong>2+</strong>
-          <span>Years in Tech</span>
+        <h1 class="hero-title">
+          Valerie<br><span class="name-accent">Mbaka.</span>
+          <span class="role-line">Software Engineer</span>
+        </h1>
+        <p class="hero-desc">
+          A passionate engineer building impactful, user-centered solutions.
+          Specializing in <span class="hero-typing" id="typingText"></span>
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-accent">View Projects</a>
+          <a href="#contact" class="btn-ghost">Get in Touch</a>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Skills -->
-<section id="skills">
-  <div class="section-inner">
-    <p class="section-label">Skills</p>
-    <h2 class="section-title reveal">My Tech Stack</h2>
-    <div class="skills-grid" id="skillsGrid">
-      <!-- Skill cards are injected by JS -->
-    </div>
-  </div>
-</section>
-
-<!-- Education -->
-<section id="education">
-  <div class="section-inner">
-    <p class="section-label">Education</p>
-    <h2 class="section-title reveal">Academic Journey</h2>
-    <div class="education-grid reveal">
-      <div class="edu-card">
-        <div class="edu-year">2023 – Present</div>
-        <div class="edu-degree">B.Sc. Software Engineering</div>
-        <div class="edu-inst">Multimedia University of Kenya</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-year">2019 – 2022</div>
-        <div class="edu-degree">High School Diploma</div>
-        <div class="edu-inst">The Kenya High School</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-year">2025 – Present</div>
-        <div class="edu-degree">Software Engineering</div>
-        <div class="edu-inst">Power Learn Project</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-year">Oct – Dec 2024</div>
-        <div class="edu-degree">Web Development</div>
-        <div class="edu-inst">eMobilis Technology Training Institute</div>
-      </div>
-      <div class="cv-banner">
-        <div class="cv-banner-text">
-          <strong>Want to know more?</strong>
-          <span>Download my full CV to see my complete experience.</span>
-        </div>
-        <a href="docs/Valerie%20Mbaka%20CV.pdf" download class="btn-cv">📄 Download CV</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Interests -->
-<section id="interests">
-  <div class="section-inner">
-    <p class="section-label">Interests</p>
-    <h2 class="section-title reveal">What Excites Me</h2>
-    <div class="interests-grid reveal">
-      <div class="interest-card">
-        <div class="interest-emoji">💡</div>
-        <div class="interest-title">Problem Solving</div>
-        <div class="interest-desc">Breaking down complex problems and finding elegant solutions through thoughtful code.</div>
-      </div>
-      <div class="interest-card">
-        <div class="interest-emoji">💻</div>
-        <div class="interest-title">Full-Stack Development</div>
-        <div class="interest-desc">Building end-to-end applications — from polished UIs to robust back-end systems.</div>
-      </div>
-      <div class="interest-card">
-        <div class="interest-emoji">🌐</div>
-        <div class="interest-title">Web Development</div>
-        <div class="interest-desc">Crafting beautiful, responsive websites that deliver great user experiences.</div>
-      </div>
-      <div class="interest-card">
-        <div class="interest-emoji">🧠</div>
-        <div class="interest-title">Artificial Intelligence</div>
-        <div class="interest-desc">Exploring AI's potential to revolutionize industries and tackle real-world challenges.</div>
-      </div>
-      <div class="interest-card">
-        <div class="interest-emoji">🔐</div>
-        <div class="interest-title">Cybersecurity</div>
-        <div class="interest-desc">Understanding security principles to protect data and systems from emerging threats.</div>
-      </div>
-      <div class="interest-card">
-        <div class="interest-emoji">📱</div>
-        <div class="interest-title">Android Development</div>
-        <div class="interest-desc">Building smooth, user-centric mobile applications for the Android ecosystem.</div>
-      </div>
-      <div class="interest-card">
-        <div class="interest-emoji">⚙️</div>
-        <div class="interest-title">DevOps</div>
-        <div class="interest-desc">Improving developer workflows through automation, CI/CD, and collaboration best practices.</div>
-      </div>
-      <div class="interest-card">
-        <div class="interest-emoji">🚀</div>
-        <div class="interest-title">Continuous Learning</div>
-        <div class="interest-desc">Growing every day — new frameworks, algorithms, and emerging tech trends.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Projects -->
-<section id="projects">
-  <div class="section-inner">
-    <p class="section-label">Projects</p>
-    <h2 class="section-title reveal">Selected Work</h2>
-    <div class="projects-grid reveal">
-      <div class="project-card">
-        <div class="project-num">01 — Mobile App</div>
-        <div class="project-title">Fitness App</div>
-        <p class="project-desc">An Android app designed to help users stay fit with custom workouts, progress tracking, and daily motivation boosts. Built with a clean, intuitive UI and real-time Firebase sync.</p>
-        <div class="project-tech">
-          <span class="tech-badge">Kotlin</span>
-          <span class="tech-badge">Android</span>
-          <span class="tech-badge">Firebase</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/ValerieMbaka/Project.git" target="_blank" class="project-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
-            GitHub Repo
-          </a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-num">02 — Web</div>
-        <div class="project-title">Personal Portfolio</div>
-        <p class="project-desc">This very portfolio — built to showcase my skills, journey, and passion for technology. Responsive, animated, and designed to make a great first impression.</p>
-        <div class="project-tech">
-          <span class="tech-badge">HTML</span>
-          <span class="tech-badge">CSS</span>
-          <span class="tech-badge">JavaScript</span>
-        </div>
-        <div class="project-links">
-          <a href="https://valeriembaka.github.io/My--Portfolio/" target="_blank" class="project-link project-link-primary">Live Demo ↗</a>
-          <a href="https://github.com/ValerieMbaka/My--Portfolio.git" target="_blank" class="project-link">GitHub</a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-num">03 — E-commerce</div>
-        <div class="project-title">MarketShift</div>
-        <p class="project-desc">A full-featured e-commerce platform enabling users to buy and sell goods online. Combines a Django back-end, MySQL database, and modern front-end for a seamless shopping experience.</p>
-        <div class="project-tech">
-          <span class="tech-badge">Django</span>
-          <span class="tech-badge">Python</span>
-          <span class="tech-badge">MySQL</span>
-          <span class="tech-badge">Bootstrap</span>
-          <span class="tech-badge">Firebase</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/ValerieMbaka/E-commerce-Project.git" target="_blank" class="project-link">
-            GitHub Repo
-          </a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-num">04 — Gaming Platform</div>
-        <div class="project-title">GamiKonnect</div>
-        <p class="project-desc">A gamified social platform that connects players, tracks achievements, and fosters community engagement through interactive challenges and leaderboards. Built with a Django back-end, Firebase real-time features, and a dynamic JavaScript front-end.</p>
-        <div class="project-tech">
-          <span class="tech-badge">Django</span>
-          <span class="tech-badge">Python</span>
-          <span class="tech-badge">JavaScript</span>
-          <span class="tech-badge">HTML/CSS</span>
-          <span class="tech-badge">Firebase</span>
-          <span class="tech-badge">MySQL</span>
-        </div>
-        <div class="project-links">
-          <a href="https://www.gamikonnect.com" target="_blank" class="project-link project-link-primary">Live Demo ↗</a>
-          <a href="https://github.com/ValerieMbaka/GamiKonnect.git" target="_blank" class="project-link">
-            <svg viewBox="0 0 24 24" fill="currentColor" style="width:12px;height:12px"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
-            GitHub (Private)
-          </a>
-        </div>
-      </div>
-      <div class="project-card">
-        <div class="project-num">05 — Healthcare</div>
-        <div class="project-title">Antenatal &amp; Child Immunization Tracker</div>
-        <p class="project-desc">A web-based health tracking system for monitoring antenatal care visits and child immunization schedules. Helps healthcare workers and mothers stay on top of critical milestones, reducing missed appointments and improving maternal and child health outcomes.</p>
-        <div class="project-tech">
-          <span class="tech-badge">Django</span>
-          <span class="tech-badge">Python</span>
-          <span class="tech-badge">PostgreSQL</span>
-          <span class="tech-badge">JavaScript</span>
-          <span class="tech-badge">HTML/CSS</span>
-        </div>
-        <div class="project-links">
-          <a href="https://ach-tracking-system.onrender.com" target="_blank" class="project-link project-link-primary">Live Demo ↗</a>
-          <a href="https://github.com/ValerieMbaka/Antenatal-and-Child-Immunization-Tracking-System.git" target="_blank" class="project-link">
-            <svg viewBox="0 0 24 24" fill="currentColor" style="width:12px;height:12px"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>
-            GitHub (Private)
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-  <div class="section-inner">
-    <p class="section-label">Contact</p>
-    <h2 class="section-title reveal">Let's Work Together</h2>
-    <div class="contact-wrap reveal">
-      <div class="contact-info">
-        <p>Have a project in mind, want to collaborate, or just want to say hello? I'm always open to interesting conversations and new opportunities.</p>
-        <div class="contact-channels">
-          <a href="mailto:valerie0@gmail.com" class="contact-channel">
-            <div class="channel-icon">📧</div>
-            <div>
-              <div class="channel-label">Email</div>
-              <div class="channel-value">valeriembaka0@gmail.com</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/valeriembaka" target="_blank" class="contact-channel">
-            <div class="channel-icon">💼</div>
-            <div>
-              <div class="channel-label">LinkedIn</div>
-              <div class="channel-value">linkedin.com/in/valeriembaka</div>
-            </div>
-          </a>
-          <a href="https://github.com/ValerieMbaka" target="_blank" class="contact-channel">
-            <div class="channel-icon">💻</div>
-            <div>
-              <div class="channel-label">GitHub</div>
-              <div class="channel-value">github.com/ValerieMbaka</div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="contact-form-wrap">
-        <form action="mailto:valerie0@gmail.com" method="post" enctype="text/plain">
-          <div class="form-group">
-            <label class="form-label" for="name">Full Name</label>
-            <input class="form-control" type="text" id="name" name="name" required placeholder="Your name" />
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">5+</div>
+            <div class="hero-stat-label">Live Projects</div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Email Address</label>
-            <input class="form-control" type="email" id="email" name="email" required placeholder="your@email.com" />
+          <div>
+            <div class="hero-stat-num">14+</div>
+            <div class="hero-stat-label">Technologies</div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="message">Message</label>
-            <textarea class="form-control" id="message" name="message" required placeholder="Tell me about your project..."></textarea>
+          <div>
+            <div class="hero-stat-num">2+</div>
+            <div class="hero-stat-label">Years Learning</div>
           </div>
-          <button type="submit" class="btn-submit">Send Message →</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">VM<span>.</span></div>
-    <div class="footer-links">
-      <a href="https://github.com/ValerieMbaka" target="_blank">
-        <img src="icons/github.png" alt="GitHub" onerror="this.style.display='none'" />
-        GitHub
-      </a>
-      <a href="https://www.linkedin.com/in/valeriembaka" target="_blank">
-        <img src="icons/linkedin.png" alt="LinkedIn" onerror="this.style.display='none'" />
-        LinkedIn
-      </a>
-    </div>
-    <div class="footer-copy">© Valerie Mbaka 2025. All rights reserved.</div>
-  </div>
-</footer>
-
-<script>
-  /* Custom cursor */
-  const cursor = document.getElementById('cursor');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top  = e.clientY + 'px';
-  });
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => { cursor.style.width = '20px'; cursor.style.height = '20px'; cursor.style.opacity = '0.6'; });
-    el.addEventListener('mouseleave', () => { cursor.style.width = '10px'; cursor.style.height = '10px'; cursor.style.opacity = '1'; });
-  });
-
-  /* Nav scroll */
-  const nav = document.getElementById('mainNav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
-
-  /* Mobile menu */
-  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
-  document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
-  document.querySelectorAll('.mobile-link').forEach(a => a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open')));
-
-  /* Typing animation */
-  const phrases = ['Full-Stack Development', 'Android Apps', 'Web Development', 'Problem Solving'];
-  let pi = 0, ci = 0, del = false;
-  const el = document.getElementById('typingText');
-  function type() {
-    const word = phrases[pi];
-    if (!del) {
-      el.textContent = word.slice(0, ++ci);
-      if (ci === word.length) { del = true; setTimeout(type, 1400); return; }
-    } else {
-      el.textContent = word.slice(0, --ci);
-      if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; setTimeout(type, 400); return; }
-    }
-    setTimeout(type, del ? 40 : 80);
-  }
-  type();
-
-  /* Skills data */
-  const skills = [
-    { name: 'HTML5',       icon: 'icons/html-5.png',      pct: 98 },
-    { name: 'CSS3',        icon: 'icons/css.png',         pct: 97 },
-    { name: 'Bootstrap 5', icon: 'icons/bootstrap.png',   pct: 95 },
-    { name: 'JavaScript',  icon: 'icons/java-script.png', pct: 88 },
-    { name: 'Python',      icon: 'icons/python.png',      pct: 90 },
-    { name: 'Django',      icon: 'icons/django.png',      pct: 96 },
-    { name: 'Java',        icon: 'icons/java.png',        pct: 85 },
-    { name: 'Kotlin',      icon: 'icons/kotlin.jpeg',     pct: 75 },
-    { name: 'Node.js',     icon: 'icons/nodejs.png',      pct: 70 },
-    { name: 'Git',         icon: 'icons/github.png',      pct: 90 },
-    { name: 'C',           icon: 'icons/c-.png',          pct: 80 },
-    { name: 'C++',         icon: 'icons/c-logo.png',      pct: 87 },
-    { name: 'MySQL',       icon: 'icons/mysql.png',       pct: 80 },
-    { name: 'Oracle',      icon: 'icons/oracle.png',      pct: 75 },
-  ];
-
-  const grid = document.getElementById('skillsGrid');
-  skills.forEach(s => {
-    grid.insertAdjacentHTML('beforeend', `
-      <div class="skill-card reveal">
-        <div class="skill-card-top">
-          <img src="${s.icon}" alt="${s.name}" class="skill-icon" onerror="this.style.display='none'">
-          <span class="skill-pct">${s.pct}%</span>
         </div>
-        <div class="skill-name">${s.name}</div>
-        <div class="skill-bar"><div class="skill-fill" data-pct="${s.pct}"></div></div>
       </div>
-    `);
-  });
 
-  /* Scroll reveal + skills animation */
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add('visible');
-      revealObserver.unobserve(e.target);
-    });
-  }, { threshold: 0.12 });
+      <!-- Circular hero image -->
+      <div class="hero-image-wrap">
+        <div class="hero-image-ring"></div>
+        <div class="hero-image-circle">
+          <img src="images/val.jpg" alt="Valerie Mbaka" class="hero-photo" />
+        </div>
+        <div class="hero-card-badge">
+          <div class="hero-card-badge-icon">⚡</div>
+          <div>
+            <div class="hero-card-badge-text">Based in Nairobi, Kenya</div>
+            <div class="hero-card-badge-sub">Multimedia University of Kenya</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  const skillsObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      document.querySelectorAll('.skill-fill').forEach(fill => {
-        fill.style.width = fill.getAttribute('data-pct') + '%';
-      });
-      skillsObserver.disconnect();
-    });
-  }, { threshold: 0.2 });
+  <!-- Marquee -->
+  <div class="marquee-section">
+    <div class="marquee-track">
+      <span class="marquee-item"><span class="dot"></span>Full-Stack Development</span>
+      <span class="marquee-item"><span class="dot"></span>Android Apps</span>
+      <span class="marquee-item"><span class="dot"></span>Web Development</span>
+      <span class="marquee-item"><span class="dot"></span>Python &amp; Django</span>
+      <span class="marquee-item"><span class="dot"></span>Kotlin &amp; Java</span>
+      <span class="marquee-item"><span class="dot"></span>Cybersecurity</span>
+      <span class="marquee-item"><span class="dot"></span>AI Enthusiast</span>
+      <span class="marquee-item"><span class="dot"></span>Open Source</span>
+      <span class="marquee-item"><span class="dot"></span>Full-Stack Development</span>
+      <span class="marquee-item"><span class="dot"></span>Android Apps</span>
+      <span class="marquee-item"><span class="dot"></span>Web Development</span>
+      <span class="marquee-item"><span class="dot"></span>Python &amp; Django</span>
+      <span class="marquee-item"><span class="dot"></span>Kotlin &amp; Java</span>
+      <span class="marquee-item"><span class="dot"></span>Cybersecurity</span>
+      <span class="marquee-item"><span class="dot"></span>AI Enthusiast</span>
+      <span class="marquee-item"><span class="dot"></span>Open Source</span>
+    </div>
+  </div>
 
-  const skillsSect = document.getElementById('skills');
-  if (skillsSect) skillsObserver.observe(skillsSect);
+  <!-- About -->
+  <section id="about">
+    <div class="section-inner">
+      <p class="section-label">About Me</p>
+      <h2 class="section-title reveal">Driven by curiosity,<br>fueled by code.</h2>
+      <div class="about-grid reveal">
+        <div class="about-text">
+          <p>I'm a passionate software engineer who thrives on challenges and the constant pursuit of learning. My journey in tech began with a deep curiosity about how things work and a desire to create impactful solutions.</p>
+          <p>I specialize in full-stack development, web development, and Android development — constantly evolving in these fields. What drives me most is leveraging technology to create solutions that not only solve real-world problems but also promote innovation and creativity.</p>
+          <p>When I'm not coding, you can find me playing football, brainstorming new startup ideas, or exploring the latest in the tech world. My goal is to make meaningful contributions and lead innovative projects that shape the future.</p>
+          <div class="about-highlight">
+            <p>"Technology has the power to transform industries and improve lives — I want to be part of that transformation."</p>
+          </div>
+        </div>
+        <div class="about-image-wrap">
+          <img src="images/code4.jpeg" alt="Valerie coding" class="about-image-main" />
+          <div class="about-tag-float">
+            <strong>2+</strong>
+            <span>Years in Tech</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  function attachObservers() {
-    document.querySelectorAll('.reveal').forEach(el => {
-      if (!el.classList.contains('visible')) revealObserver.observe(el);
-    });
-  }
-  attachObservers();
-  setTimeout(attachObservers, 200); // for dynamically added cards
-</script>
+  <!-- Skills -->
+  <section id="skills">
+    <div class="section-inner">
+      <p class="section-label">Skills</p>
+      <h2 class="section-title reveal">My Tech Stack</h2>
+      <div class="skills-grid" id="skillsGrid">
+        <!-- Injected by scripts.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="section-inner">
+      <p class="section-label">Education</p>
+      <h2 class="section-title reveal">Academic Journey</h2>
+      <div class="education-grid reveal">
+        <div class="edu-card">
+          <div class="edu-year">2023 – Present</div>
+          <div class="edu-degree">B.Sc. Software Engineering</div>
+          <div class="edu-inst">Multimedia University of Kenya</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-year">2019 – 2022</div>
+          <div class="edu-degree">High School Diploma</div>
+          <div class="edu-inst">The Kenya High School</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-year">2025 – Present</div>
+          <div class="edu-degree">Software Engineering</div>
+          <div class="edu-inst">Power Learn Project</div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-year">Oct – Dec 2024</div>
+          <div class="edu-degree">Web Development</div>
+          <div class="edu-inst">eMobilis Technology Training Institute</div>
+        </div>
+        <div class="cv-banner">
+          <div class="cv-banner-text">
+            <strong>Want to know more?</strong>
+            <span>Download my full CV to see my complete experience.</span>
+          </div>
+          <a href="docs/Valerie%20Mbaka%20CV.pdf" download class="btn-cv">📄 Download CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interests -->
+  <section id="interests">
+    <div class="section-inner">
+      <p class="section-label">Interests</p>
+      <h2 class="section-title reveal">What Excites Me</h2>
+      <div class="interests-grid reveal">
+        <div class="interest-card">
+          <div class="interest-emoji">💡</div>
+          <div class="interest-title">Problem Solving</div>
+          <div class="interest-desc">Breaking down complex problems and finding elegant solutions through thoughtful code.</div>
+        </div>
+        <div class="interest-card">
+          <div class="interest-emoji">💻</div>
+          <div class="interest-title">Full-Stack Development</div>
+          <div class="interest-desc">Building end-to-end applications — from polished UIs to robust back-end systems.</div>
+        </div>
+        <div class="interest-card">
+          <div class="interest-emoji">🌐</div>
+          <div class="interest-title">Web Development</div>
+          <div class="interest-desc">Crafting beautiful, responsive websites that deliver great user experiences.</div>
+        </div>
+        <div class="interest-card">
+          <div class="interest-emoji">🧠</div>
+          <div class="interest-title">Artificial Intelligence</div>
+          <div class="interest-desc">Exploring AI's potential to revolutionize industries and tackle real-world challenges.</div>
+        </div>
+        <div class="interest-card">
+          <div class="interest-emoji">🔐</div>
+          <div class="interest-title">Cybersecurity</div>
+          <div class="interest-desc">Understanding security principles to protect data and systems from emerging threats.</div>
+        </div>
+        <div class="interest-card">
+          <div class="interest-emoji">📱</div>
+          <div class="interest-title">Android Development</div>
+          <div class="interest-desc">Building smooth, user-centric mobile applications for the Android ecosystem.</div>
+        </div>
+        <div class="interest-card">
+          <div class="interest-emoji">⚙️</div>
+          <div class="interest-title">DevOps</div>
+          <div class="interest-desc">Improving developer workflows through automation, CI/CD, and collaboration best practices.</div>
+        </div>
+        <div class="interest-card">
+          <div class="interest-emoji">🚀</div>
+          <div class="interest-title">Continuous Learning</div>
+          <div class="interest-desc">Growing every day — new frameworks, algorithms, and emerging tech trends.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="section-inner">
+      <p class="section-label">Projects</p>
+      <h2 class="section-title reveal">Selected Work</h2>
+      <div class="projects-grid reveal">
+
+        <div class="project-card">
+          <div class="project-num">01 — Mobile App</div>
+          <div class="project-title">Fitness App</div>
+          <p class="project-desc">An Android app designed to help users stay fit with custom workouts, progress tracking, and daily motivation boosts. Built with a clean, intuitive UI and real-time Firebase sync.</p>
+          <div class="project-tech">
+            <span class="tech-badge">Kotlin</span>
+            <span class="tech-badge">Android</span>
+            <span class="tech-badge">Firebase</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ValerieMbaka/Project.git" target="_blank" class="project-link">GitHub Repo</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">02 — Web</div>
+          <div class="project-title">Personal Portfolio</div>
+          <p class="project-desc">This very portfolio — built to showcase my skills, journey, and passion for technology. Responsive, animated, and designed to make a great first impression.</p>
+          <div class="project-tech">
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="https://valeriembaka.github.io/My--Portfolio/" target="_blank" class="project-link project-link-primary">Live Demo ↗</a>
+            <a href="https://github.com/ValerieMbaka/My--Portfolio.git" target="_blank" class="project-link">GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">03 — E-commerce</div>
+          <div class="project-title">MarketShift</div>
+          <p class="project-desc">A full-featured e-commerce platform enabling users to buy and sell goods online. Combines a Django back-end, MySQL database, and modern front-end for a seamless shopping experience.</p>
+          <div class="project-tech">
+            <span class="tech-badge">Django</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">MySQL</span>
+            <span class="tech-badge">Bootstrap</span>
+            <span class="tech-badge">Firebase</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ValerieMbaka/E-commerce-Project.git" target="_blank" class="project-link">GitHub Repo</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">04 — Gaming Platform</div>
+          <div class="project-title">GamiKonnect</div>
+          <p class="project-desc">A gamified social platform that connects players, tracks achievements, and fosters community engagement through interactive challenges and leaderboards. Built with a Django back-end, Firebase real-time features, and a dynamic JavaScript front-end.</p>
+          <div class="project-tech">
+            <span class="tech-badge">Django</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">HTML/CSS</span>
+            <span class="tech-badge">Firebase</span>
+            <span class="tech-badge">MySQL</span>
+          </div>
+          <div class="project-links">
+            <a href="https://www.gamikonnect.com" target="_blank" class="project-link project-link-primary">Live Demo ↗</a>
+            <a href="https://github.com/ValerieMbaka/GamiKonnect.git" target="_blank" class="project-link">GitHub (Private)</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-num">05 — Healthcare</div>
+          <div class="project-title">Antenatal &amp; Child Immunization Tracker</div>
+          <p class="project-desc">A web-based health tracking system for monitoring antenatal care visits and child immunization schedules. Helps healthcare workers and mothers stay on top of critical milestones, reducing missed appointments and improving maternal and child health outcomes.</p>
+          <div class="project-tech">
+            <span class="tech-badge">Django</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">HTML/CSS</span>
+          </div>
+          <div class="project-links">
+            <a href="https://ach-tracking-system.onrender.com" target="_blank" class="project-link project-link-primary">Live Demo ↗</a>
+            <a href="https://github.com/ValerieMbaka/Antenatal-and-Child-Immunization-Tracking-System.git" target="_blank" class="project-link">GitHub (Private)</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-inner">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title reveal">Let's Work Together</h2>
+      <div class="contact-wrap reveal">
+        <div class="contact-info">
+          <p>Have a project in mind, want to collaborate, or just want to say hello? I'm always open to interesting conversations and new opportunities.</p>
+          <div class="contact-channels">
+            <a href="mailto:valerie0@gmail.com" class="contact-channel">
+              <div class="channel-icon">📧</div>
+              <div>
+                <div class="channel-label">Email</div>
+                <div class="channel-value">valerie0@gmail.com</div>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/valeriembaka" target="_blank" class="contact-channel">
+              <div class="channel-icon">💼</div>
+              <div>
+                <div class="channel-label">LinkedIn</div>
+                <div class="channel-value">linkedin.com/in/valeriembaka</div>
+              </div>
+            </a>
+            <a href="https://github.com/ValerieMbaka" target="_blank" class="contact-channel">
+              <div class="channel-icon">💻</div>
+              <div>
+                <div class="channel-label">GitHub</div>
+                <div class="channel-value">github.com/ValerieMbaka</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <form action="mailto:valerie0@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name</label>
+              <input class="form-control" type="text" id="name" name="name" required placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input class="form-control" type="email" id="email" name="email" required placeholder="your@email.com" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea class="form-control" id="message" name="message" required placeholder="Tell me about your project..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Message →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">VM<span>.</span></div>
+      <div class="footer-links">
+        <a href="https://github.com/ValerieMbaka" target="_blank">
+          <img src="icons/github.png" alt="GitHub" />
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/valeriembaka" target="_blank">
+          <img src="icons/linkedin.png" alt="LinkedIn" />
+          LinkedIn
+        </a>
+      </div>
+      <div class="footer-copy">© Valerie Mbaka 2025. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
